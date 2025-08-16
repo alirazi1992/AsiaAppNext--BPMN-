@@ -1,0 +1,17 @@
+
+@media screen and (max-width: 996px){
+    .ContentStyle{
+        width: 100% !important;
+        transition: 0s !important;
+    }
+}
+
+@media screen and (max-width: 996px){
+    .SidebarStyle{
+        position: absolute !important;
+        display: none !important;
+       visibility: hidden !important;
+        transition: 0s !important;
+        /* visibility: hidden !important; */
+    }
+}

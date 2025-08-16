@@ -1,0 +1,23 @@
+
+
+.statusText{
+    background-size: 200% auto;
+     background-clip: text;
+     color: transparent;
+     background-position: 100% center;
+     animation: loader-shadow 10s ease infinite reverse;
+}
+
+
+@keyframes loader-shadow {
+    0% {
+      background-position: 100% center;
+    }
+    50% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 100% center;
+    }
+  }
+

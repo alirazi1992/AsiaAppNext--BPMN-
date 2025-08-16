@@ -1,0 +1,13 @@
+.SidebarTop {
+  height: 70px;
+}
+
+.profile {
+  height: 55px;
+  width: 55px;
+}
+
+.textLogo {
+  color: whitesmoke;
+  text-shadow: 4px 3px 6px rgba(129, 129, 129, 0.639);
+}

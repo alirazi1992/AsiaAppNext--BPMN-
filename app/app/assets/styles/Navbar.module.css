@@ -1,0 +1,19 @@
+.colorStyle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .colorStyle::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+  }
+  
+  .colorStyle::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+  }
+  

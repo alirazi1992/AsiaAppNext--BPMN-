@@ -1,0 +1,29 @@
+
+.timesheet tbody tr {
+    height: 20px !important;
+    padding: 0 0 !important;
+}
+
+.timesheet .rmdp-input {
+    background: transparent !important;
+    width: 60px !important;
+    text-align: center !important;
+}
+
+.timeSheet .muirtl-i4bv87-MuiSvgIcon-root,
+.muirtl-12qs7hp-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+    color: #607d8b !important;
+}
+
+.timeSheet .muirtl-12qs7hp-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+    -webkit-text-fill-color: #607d8b !important;
+}
+
+.timeSheet .muirtl-16sx77j {
+    color: #607d8b !important;
+    -webkit-text-fill-color: #607d8b !important;
+}
+
+.timeSheet .muirtl-vubbuv {
+    fill: #607d8b;
+}

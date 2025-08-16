@@ -1,0 +1,742 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: IranSans !important;
+}
+
+nextjs-portal {
+  display: none;
+}
+
+::selection {
+  background-color: #607d8b !important;
+  color: white !important;
+}
+
+input[type="file"]::file-selector-button {
+  color: white;
+  background-color: #607d8b70;
+  border-radius: 2px;
+  border: 1px solid #607d8b;
+}
+
+
+table tbody tr {
+  height: 40px !important;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+/* Global-Theme */
+.darkText {
+  color: #463b2f;
+}
+
+.lightText {
+  color: white;
+}
+
+.themeDark {
+  background-color: #15202c;
+}
+
+.themeLight {
+  background-color: #cbc5c0;
+}
+
+.contentDark {
+  background-color: #22303c;
+}
+
+.contentLight {
+  background-color: #eeeae6;
+}
+
+.cardDark {
+  background-color: #1b2b39;
+}
+
+.cardLight {
+  background-color: #ded6ce;
+}
+
+.tableDark {
+  background-color: #212e3a;
+}
+
+.tableLight {
+  background-color: #e5ded8;
+}
+
+.breadDark {
+  background-color: #15202ca8;
+}
+
+.breadLight {
+  background-color: #cecbc9a8;
+}
+
+/* Scroll & Scrollbar-GlobalStyles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #607d8b;
+  visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #607d8b;
+  border-radius: 3px;
+  transition: 0.4s !important;
+  height: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #607d8b;
+  height: 10px !important;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0.1px !important;
+  height: 5px !important;
+  background: transparent;
+  visibility: hidden;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  border-radius: 20px !important;
+  transition: 0.4s !important;
+  height: 5px !important;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: transparent !important;
+  height: 5px !important;
+}
+
+/* Fonts */
+@font-face {
+  font-family: IranSans;
+  src: url("./assets/font/font/IranSansX/FarsiNumerals/IRANSansXFaNum-Regular.ttf") format("truetype");
+  src: url("./assets/font/font/IranSansX/FarsiNumerals/IRANSansXFaNum-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: EnUltraLight;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-UltraLight.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-UltraLight.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-UltraLight.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-UltraLight.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-UltraLight.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-UltraLight.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnThin;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Thin.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Thin.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Thin.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Thin.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Thin.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Thin.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnRegular;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Regular.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Regular.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Regular.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Regular.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Regular.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Regular.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnMedium;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Medium.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Medium.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Medium.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Medium.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Medium.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Medium.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnLight;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Light.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Light.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Light.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Light.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Light.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Light.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnHeavy;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Heavy.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Heavy.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Heavy.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Heavy.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Heavy.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Heavy.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnExtraBold;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-ExtraBold.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-ExtraBold.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-ExtraBold.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-ExtraBold.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-ExtraBold.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-ExtraBold.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnExtraBlack;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-ExtraBlack.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-ExtraBlack.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-ExtraBlack.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-ExtraBlack.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-ExtraBlack.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-ExtraBlack.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnDemiBold;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-DemiBold.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-DemiBold.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-DemiBold.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-DemiBold.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-DemiBold.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-DemiBold.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnBold;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Bold.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Bold.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Bold.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Bold.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Bold.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Bold.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: EnBlack;
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Black.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Black.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Black.woff2") format("truetype");
+  src: url("./assets/font/newFont/font/IranSansX\(Pro\)/EnglishFont/IRANSansX-Black.ttf") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff/IRANSansX-Black.woff") format("truetype"),
+    url("./assets/font/newFont/font/IranSansX\(Pro\)/Webfonts/fonts/woff2/IRANSansX-Black.woff2") format("truetype");
+}
+
+/* TimePickare-GlobalStyles */
+.bg-dark.rmdp-wrapper,
+.bg-dark .rmdp-month-picker,
+.bg-dark .rmdp-year-picker,
+.bg-dark .rmdp-time-picker div input,
+.rmdp-container .bg-dark.ep-arrow::after,
+.bg-dark.rmdp-wrapper .rmdp-day,
+.bg-dark.rmdp-wrapper .rmdp-header-values {
+  background-color: #212e3a !important;
+  color: white !important;
+}
+
+.bg-gray.rmdp-wrapper,
+.bg-gray .rmdp-month-picker,
+.bg-gray .rmdp-year-picker,
+.bg-gray .rmdp-time-picker div input,
+.rmdp-container .bg-gray.ep-arrow::after,
+.bg-gray.rmdp-wrapper .rmdp-day,
+.bg-gray.rmdp-wrapper .rmdp-header-values {
+  background-color: #ded6ce !important;
+  color: #463b2f !important;
+}
+
+.rmdp-container {
+  width: 100% !important;
+}
+
+/* NewDocument-HierarchyGlobalStyles */
+.red>line {
+  stroke: #c40a0a !important;
+  filter: drop-shadow(2px 1px 5px rgba(196, 10, 10, 0.915));
+}
+
+.yellow>line {
+  stroke: #f5d32d !important;
+  filter: drop-shadow(2px 1px 5px rgba(246, 176, 37, 0.915));
+}
+
+.green>line {
+  stroke: #04ca6a !important;
+  filter: drop-shadow(2px 1px 5px rgba(4, 202, 106, 0.968));
+}
+
+.blue>line {
+  stroke: #2292c3 !important;
+  filter: drop-shadow(2px 1px 5px rgb(21, 93, 124, 0.915));
+}
+
+line {
+  stroke-width: 4 !important;
+}
+
+/* TimesheetStyles */
+.timesheet tbody tr {
+  height: 3vh !important;
+  padding: 0 0 !important;
+}
+
+.timesheet .rmdp-input {
+  background: transparent !important;
+  width: 60px !important;
+  text-align: center;
+}
+
+.timeSheet .muirtl-i4bv87-MuiSvgIcon-root,
+.muirtl-12qs7hp-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+  color: #607d8b !important;
+}
+
+.timeSheet .muirtl-12qs7hp-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+  -webkit-text-fill-color: #607d8b !important;
+}
+
+.timeSheet .muirtl-16sx77j {
+  color: #607d8b !important;
+  -webkit-text-fill-color: #607d8b !important;
+}
+
+.timeSheet .muirtl-vubbuv {
+  fill: #607d8b;
+}
+
+/* ErrorPage-GlobalStyles */
+#statusCode {
+  content: "404";
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-position: 100% center;
+  animation: loader-shadow 5s ease infinite reverse;
+  text-shadow: 5px 5px 10px #0c2230c9;
+  font-family: EnDemiBold;
+  font-weight: 700;
+}
+
+.number {
+  content: "\u0661";
+}
+
+#statusCode>span {
+  font-size: 2vh;
+}
+
+@keyframes loader-shadow {
+  0% {
+    background-position: 100% center;
+  }
+
+  50% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 100% center;
+  }
+}
+
+/* HoverButton-Styles */
+.menuIconStyle {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabs-body {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 0;
+}
+
+
+
+.statusTable tr td *,
+.LoginForm *,
+.surveyTab *,
+.RulesClass *,
+.statusTable *,
+.EnFont * {
+  font-family: EnMedium !important;
+}
+
+.AccordionTiltle,
+.vesselInfo .title {
+  font-family: EnBold !important;
+}
+
+.registerVesselInfo * {
+  font-family: EnLight !important;
+}
+
+.css-166bipr-Input,
+.css-166bipr-Input *,
+.css-1dimb5e-singleValue,
+.css-1dimb5e-singleValue * {
+  color: #607d8b !important;
+}
+
+/* taxtEditor */
+.ql-snow .ql-stroke {
+  stroke: #607d8b !important;
+}
+
+.ql-snow .ql-fill,
+.ql-snow .ql-stroke.ql-fill {
+  fill: #607d8b !important;
+}
+
+.ql-snow .ql-picker {
+  color: #607d8b !important;
+}
+
+.side-nav .nav-menu {
+  list-style: none;
+  padding: 40px 0;
+}
+
+.nav-item a {
+  text-decoration: none;
+}
+
+.side-nav .nav-item {
+  position: relative;
+  padding: 10px 20px;
+}
+
+
+.nav-item.active {
+  border-radius: 25px 0 0 25px;
+}
+
+.nav-item.active .bi {
+  padding: 5px 6px;
+  border-radius: 50%;
+}
+
+.side-nav .nav-item.active>div {
+  position: absolute;
+  right: 0;
+  height: 150%;
+  width: 20px;
+}
+
+.side-nav .nav-item.active>div:nth-of-type(1) {
+  background-color: transparent;
+  bottom: 100%;
+  border-bottom-right-radius: 25px;
+}
+
+.side-nav .nav-item.active>div:nth-of-type(2) {
+  background-color: transparent;
+  top: 100%;
+  border-top-right-radius: 25px;
+}
+
+.swal2-container {
+  z-index: 9999;
+}
+
+.css-1q5rr72-container {
+  opacity: 2px !important;
+}
+
+
+.swal2-container {
+  z-index: 9999;
+}
+
+.MuiPagination-ul .Mui-selected {
+  background-color: #607d8b !important;
+  color: white !important;
+  border-color: #607d8b !important;
+}
+
+.MuiPaginationItem-root,
+.MuiPaginationItem-outlined {
+  outline: #607d8b !important;
+  color: #607d8b !important;
+  border-color: #607d8b !important;
+}
+
+[id^="tree"] {
+  background-color: transparent !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px #23232329;
+}
+
+.initechNode {
+  border-radius: 3px;
+  padding: 5px;
+  width: 150px;
+  display: inline-block;
+}
+
+.initechNode--parent {
+  margin: 0 auto;
+}
+
+[data-n-id] rect:hover {
+  filter: drop-shadow(4px 2px 2px #aeaeae);
+}
+
+.initechNode--children {
+  margin-left: 0px !important;
+}
+
+text {
+  font-size: 12px !important;
+}
+
+.boc-chart-menu {
+  background-color: #607d8b !important;
+}
+
+
+.loader {
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  background-color: #2e4b64;
+  background-color: #ccbba4;
+}
+
+.barr {
+  display: inline-block;
+  width: 1.5px;
+  height: 10px;
+  border-radius: 10px;
+  animation: scale-up5 1s linear infinite;
+}
+
+.barr:nth-child(2) {
+  height: 17px;
+  margin: 0 5px;
+  animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+
+.barr:nth-child(3) {
+  animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scale-up5 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(0.9);
+  }
+
+  40% {
+    transform: scaleY(0.5);
+  }
+}
+
+.boc-edit-form-header {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.boc-edit-form-instruments {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.boc-edit-form {
+  height: auto !important;
+  padding: 30px !important;
+}
+
+.boc-input {
+  direction: rtl;
+}
+
+.group button {
+  min-width: 25px !important;
+  min-height: 25px !important;
+  padding: 5px !important;
+}
+
+/* toast */
+.Toastify__toast {
+  margin-bottom: 0.5rem !important;
+  padding: 4px !important;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.ContentStyle .w-max {
+  width: 100% !important;
+}
+
+/* ******* */
+.e-remove-selection {
+  pointer-events: none;
+}
+
+.column-style {
+  display: table;
+  height: 35px;
+  padding-right: 4px;
+  padding-left: 0px;
+  width: calc((100% - 12px) / 3);
+}
+
+
+
+.css-1xew3n3-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+  opacity: 1;
+  -webkit-text-fill-color: #607d8b !important;
+}
+
+.css-1xew3n3-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled::selection {
+  background-color: transparent !important;
+  color: #607d8b !important;
+  color: #607d8b !important;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.row-header {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.e-checkbox-wrapper .e-label {
+  font-size: 12px;
+}
+
+.e-selected-style {
+  border-color: #006ce6;
+  border-width: 2px;
+}
+
+.e-export::before {
+  content: "\e711";
+}
+
+.diagram-control-pane .col-xs-6 {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 5px;
+}
+
+.muirtl-12qs7hp-MuiInputBase-input-MuiOutlinedInput-input {
+  color: #607d8b !important;
+}
+
+.showDropdown {
+  display: none;
+}
+
+.group-button button {
+  margin-right: 5px;
+}
+
+.border-select-group {
+  padding: 0px 0 !important;
+  border: 1px solid #607d8b;
+  border-radius: 5px;
+}
