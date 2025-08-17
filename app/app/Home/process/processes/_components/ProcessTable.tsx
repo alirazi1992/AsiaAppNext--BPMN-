@@ -24,6 +24,7 @@ export default function ProcessTable({ data, onDelete, onEdit }: Props) {
   const isDark = !themeMode || themeMode.stateMode;
 
   const [currentPage, setCurrentPage] = useState(1);
+
   const rowsPerPage = 10;
   const totalPages = Math.max(1, Math.ceil(data.length / rowsPerPage));
   const startIndex = (currentPage - 1) * rowsPerPage;
@@ -41,30 +42,6 @@ export default function ProcessTable({ data, onDelete, onEdit }: Props) {
 
   return (
     <>
-      {/* icon hover animation only for this table (does NOT affect other files) */}
-      <style jsx>{`
-        @keyframes shake {
-          0% {
-            transform: translateX(0) rotate(0);
-          }
-          25% {
-            transform: translateX(-2px) rotate(-5deg);
-          }
-          50% {
-            transform: translateX(2px) rotate(5deg);
-          }
-          75% {
-            transform: translateX(-2px) rotate(-5deg);
-          }
-          100% {
-            transform: translateX(0) rotate(0);
-          }
-        }
-        .proc-action:hover .proc-icon {
-          animation: shake 0.4s ease-in-out infinite;
-        }
-      `}</style>
-
       <div className="overflow-x-auto">
         <div className={`${isDark ? "rounded-lg shadow-sm tableDark" : "rounded-lg shadow-sm tableLight border"}`}>
           {/* header */}
@@ -119,30 +96,29 @@ export default function ProcessTable({ data, onDelete, onEdit }: Props) {
                       <div className="md:col-span-1 flex items-center justify-center gap-1">
                         <button
                           onClick={() => onDelete(proc.id)}
-                          className="proc-action group w-7 h-7 rounded-md flex items-center justify-center"
+                          className="proc-action w-7 h-7 rounded-md flex items-center justify-center"
                           style={{ background: color?.color, color: "white" }}
                           title="حذف"
                         >
-                          <DeleteIcon className="proc-icon transition-transform" />
+                          <DeleteIcon className="shake-icon" />
                         </button>
 
                         <button
                           onClick={() => onEdit(proc)}
-                          className="proc-action group w-7 h-7 rounded-md flex items-center justify-center"
+                          className="proc-action w-7 h-7 rounded-md flex items-center justify-center"
                           style={{ background: color?.color, color: "white" }}
                           title="ویرایش"
                         >
-                          <EditIcon className="proc-icon transition-transform" />
+                          <EditIcon className="shake-icon" />
                         </button>
 
-                        {/* DESIGN → navigate to dedicated page */}
                         <button
                           onClick={() => router.push(`/Home/process/processes/design/${proc.id}`)}
-                          className="proc-action group w-7 h-7 rounded-md flex items-center justify-center"
+                          className="proc-action w-7 h-7 rounded-md flex items-center justify-center"
                           style={{ background: color?.color, color: "white" }}
                           title="طراحی BPMN"
                         >
-                          <PaletteIcon className="proc-icon transition-transform" />
+                          <PaletteIcon className="shake-icon" />
                         </button>
                       </div>
                     </div>
@@ -178,6 +154,46 @@ export default function ProcessTable({ data, onDelete, onEdit }: Props) {
           )}
         </div>
       </div>
+
+      {/* Global CSS for shaking icons */}
+      <style global jsx>{`
+        @keyframes shake {
+          10% {
+            transform: translateX(-2px) rotate(-5deg);
+          }
+          20% {
+            transform: translateX(2px) rotate(5deg);
+          }
+          30% {
+            transform: translateX(-2px) rotate(-5deg);
+          }
+          40% {
+            transform: translateX(2px) rotate(5deg);
+          }
+          50% {
+            transform: translateX(-1px) rotate(-3deg);
+          }
+          60% {
+            transform: translateX(1px) rotate(3deg);
+          }
+          70% {
+            transform: translateX(-1px) rotate(-2deg);
+          }
+          80% {
+            transform: translateX(1px) rotate(2deg);
+          }
+          90% {
+            transform: translateX(0px) rotate(0deg);
+          }
+          100% {
+            transform: translateX(0px) rotate(0deg);
+          }
+        }
+
+        .proc-action:hover .shake-icon {
+          animation: shake 0.5s ease-in-out;
+        }
+      `}</style>
     </>
   );
 }
